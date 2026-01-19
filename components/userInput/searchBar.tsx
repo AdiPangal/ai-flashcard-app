@@ -1,0 +1,59 @@
+import { useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { useTheme } from '@/contexts/ThemeContext';
+
+type CustomInputProps = {
+    value: string;
+    onChangeText: (text: string) => void;
+    placeholder?: string;
+    secureTextEntry?: boolean;
+    keyboardType?: string;
+}
+
+export default function InputBox({value, onChangeText, placeholder, secureTextEntry, keyboardType}: CustomInputProps){
+    const { colors } = useTheme();
+    const [isFocused, setIsFocused] = useState(false);
+
+    const handleFocus = () => {
+        setIsFocused(true);
+    }
+
+    const handleBlur = () => {
+        setIsFocused(false);
+    }
+    return (
+        <View style={styles.container}>
+            <TextInput
+                value={value}
+                onChangeText={onChangeText}
+                placeholder={placeholder}
+                placeholderTextColor={colors.textSecondary}
+                secureTextEntry={secureTextEntry}
+                keyboardType={keyboardType as any}
+                style={[styles.input, { 
+                    backgroundColor: colors.backgroundSecondary, 
+                    color: colors.textPrimary,
+                    borderColor: isFocused ? colors.brandPrimary : colors.border 
+                }]}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+            />
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    input:{
+        width: '100%',
+        fontSize: 15,
+        fontFamily: "Inter",
+        paddingHorizontal: 10,
+        paddingVertical: 13,
+        marginVertical: 5,
+        borderWidth: 1,
+        borderRadius: 10,
+    },
+    container:{
+        width: '100%',
+    }
+})

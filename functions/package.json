@@ -1,0 +1,37 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint . --ignore-pattern 'lib/**' --ignore-pattern 'node_modules/**' --ignore-pattern '*.log'",
+    "build": "tsc",
+    "test": "ts-node test-pipeline.ts",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "@google-cloud/documentai": "^9.5.0",
+    "@google/generative-ai": "^0.24.1",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^7.0.3",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.29.0",
+    "firebase-functions-test": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.0"
+  },
+  "private": true
+}

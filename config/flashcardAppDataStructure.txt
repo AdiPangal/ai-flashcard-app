@@ -1,0 +1,89 @@
+Firestore Data Structure for AI Flashcard App
+==============================================
+
+IMPORTANT: The document ID in the 'users' collection IS the Firebase Authentication UID.
+Use the Auth UID directly as the document ID: doc(db, 'users', userId)
+
+COLLECTION: users
+-----------------
+Document ID: {userId} (Firebase Auth UID - e.g., "abc123xyz...")
+
+Document Fields:
+{
+  displayName: string,              // User's display name (can be from Firebase Auth or custom)
+  email: string,                    // User's email (also available in Firebase Auth)
+  lastLogin: timestamp,             // Last login timestamp (updated on each login)
+  history: {
+    flashcards: array[flashcardObj],
+    quizzes: array[quizObj]
+  },
+  preferences: {
+    darkMode: boolean,
+    defaultQuestionCount: number,
+    notifications: boolean
+  }
+}
+
+NOTE: password is NOT stored in Firestore - Firebase Authentication handles passwords securely.
+
+==============================================
+
+Flashcard Object Structure (stored in user.history.flashcards)
+---------------------------------------------------------------
+flashcardObj {
+  title: string,
+  tags: array[string],
+  creationDate: timestamp,          // When the flashcard set was created
+  lastReviewed: timestamp,          // Last time user reviewed this set
+  cards: array[{
+    question: string,
+    answer: string,
+    status: "complete" | "review",  // Whether user has mastered this card
+    confidenceLevel: number          // User's confidence (e.g., 0-5 scale)
+  }]
+}
+
+Features:
+- Tap to reveal answer
+- Swipe left/right to indicate confidence level
+- Replay non-confident cards until all are confident
+- Ability to review all cards again
+
+==============================================
+
+Quiz Object Structure (stored in user.history.quizzes)
+-------------------------------------------------------
+quizObj {
+  title: string,
+  creationDate: timestamp,
+  isComplete: boolean,
+  lastAccessed: timestamp,
+  lastQuestionIndex: number,        // Index of last question accessed (for resuming incomplete quizzes, starts at 0)
+  score: number,                    // Quiz score (e.g., percentage or points)
+  tags: array[string],
+  bookmarkedQuestions: array[number], // Array of question indices that are bookmarked (optional)
+  questionsList: array[{
+    type: "multiple-choice" | "multiple-selection" | "fill-in-the-blank",
+    question: string,               // The question text
+    answer: string | array[string], // Correct answer(s)
+    options: array[string],         // Available options (for multiple-choice/selection)
+    currentAnswer: string | array[string] // User's current/selected answer(s)
+  }]
+}
+
+NOTE: Use array index for navigation (e.g., quizzes[index]). Question count can be computed from questionsList.length. lastQuestionIndex initializes to 0 and updates as user progresses through the quiz. bookmarkedQuestions is optional and used to mark questions for later review.
+
+==============================================
+
+Usage Example:
+--------------
+// Access user document using Auth UID as document ID
+const { userId, db } = useAuth();
+const userDocRef = doc(db, 'users', userId);
+const userDoc = await getDoc(userDocRef);
+
+// Access user's flashcards
+const flashcards = userDoc.data()?.history?.flashcards || [];
+
+// Access user preferences
+const preferences = userDoc.data()?.preferences || {};

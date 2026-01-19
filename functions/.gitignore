@@ -1,0 +1,15 @@
+# Compiled JavaScript files
+lib/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Test outputs
+test-outputs/
+
+# Node modules
+node_modules/
