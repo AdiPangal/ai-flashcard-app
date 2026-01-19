@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+# FlashQuiz
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This app automatically creates flashcards and quizzes based on user inputted notes through AI. 
 
-## Get started
+## About
 
-1. Install dependencies
+This app is meant to smoothen the process of creating flashcards and quizzes. Rather than having to create your own quizzes or flashcards from your notes, you can quickly create them using this app. This helps students save time and allows them to spend more time doing things other than creating quizzes or flashcards. This app is intended for students in school that need help studying for a test. 
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- User authentication with email and password
+- Real-time data synchronization through Firebase
+- Upload pdf of notes or photos of notes
+- Create flashcards based on user notes through AI
+- Tracks mastery of flashcards
+- Create quizzes with multiple choice, multiple selection, or fill-in-the-blank questions with AI
+- Review quizzes and flashcards as many times as needed
+- Dark mode and light mode options
 
-   ```bash
-   npx expo start
-   ```
+## Screenshots
+<img width="295" height="639" alt="IMG_3130" src="https://github.com/user-attachments/assets/3e31b9af-22c1-4a0c-8b76-2f6c76cc7249" />
+<img width="295" height="639" alt="IMG_3132" src="https://github.com/user-attachments/assets/1ea2b22f-c26d-4efb-b5d7-89afc675b55b" />
+<img width="295" height="639" alt="IMG_3134" src="https://github.com/user-attachments/assets/7b08a891-9177-46ea-aad2-35fc49feb6e7" />
+<img width="295" height="639" alt="IMG_3131" src="https://github.com/user-attachments/assets/0f9ea9b3-b638-49b0-9ae0-d110b5dc13e9" />
 
-In the output, you'll find options to open the app in a
+## Technologies Used
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- React Native / Expo
+- Firebase
+- Gemini
+- ChatGPT
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Usage
 
-## Get a fresh project
+Firstly, a user needs to sign up or login in into the app. They then will be taken to the homescreen where they will be able to select whether they want to make a flashcard set or quiz, upload their notes, change the settings pertaining to what they are creating and create the flashcard or quiz. From there, the user will be taken to the homepage for that flashcard or quiz. For the flashcards, the home page gives the user the ability to add new cards, edit cards, or start practicing a certain number of flashcards. The user can practice the flashcards as much as they would like at any time since the user can reaccess their flashcards in the history page. For the quiz, the home includes basic information about the quiz and a button for the user to start the quiz. The user can then complete the quiz. Afterwards, they will be able to see their results and can click another button to see all the questions again. The user can then retake the quiz as much as they would like to. 
 
-When you're ready, run:
+## Future Improvements
 
-```bash
-npm run reset-project
-```
+- [ ] Add google sign-in feature
+- [ ] Improve password recovery feature
+- [ ] Improve the AI to create even better flashcards (better prompting or better AI pipeline)
+- [ ] More testing on Android and other iOS devices
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contact
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Adi Pangal - adipangal@gmail.com
