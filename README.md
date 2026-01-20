@@ -4,13 +4,13 @@ This app automatically creates flashcards and quizzes based on user inputted not
 
 ## About
 
-This app is meant to smoothen the process of creating flashcards and quizzes. Rather than having to create your own quizzes or flashcards from your notes, you can quickly create them using this app. This helps students save time and allows them to spend more time doing things other than creating quizzes or flashcards. This app is intended for students in school that need help studying for a test. 
+This app is meant to smooth the process of creating flashcards and quizzes. Rather than having to create your own quizzes or flashcards from your notes, you can quickly create them using this app. This helps students save time and allows them to spend more time doing things other than creating quizzes or flashcards. This app is intended for students in school that need help studying for a test. 
 
 ## Features
 
 - User authentication with email and password
 - Real-time data synchronization through Firebase
-- Upload pdf of notes or photos of notes
+- Upload PDFs, photos of notes, or diagrams (AI automatically understands diagrams in images)
 - Create flashcards based on user notes through AI
 - Tracks mastery of flashcards
 - Create quizzes with multiple choice, multiple selection, or fill-in-the-blank questions with AI
@@ -19,20 +19,51 @@ This app is meant to smoothen the process of creating flashcards and quizzes. Ra
 
 ## Screenshots
 <img width="295" height="639" alt="IMG_3130" src="https://github.com/user-attachments/assets/3e31b9af-22c1-4a0c-8b76-2f6c76cc7249" />
+*Home screen with flashcard and quiz creation options*
+
 <img width="295" height="639" alt="IMG_3132" src="https://github.com/user-attachments/assets/1ea2b22f-c26d-4efb-b5d7-89afc675b55b" />
+*Flashcard home screen where you can add, edit, and delete flashcards*
 <img width="295" height="639" alt="IMG_3134" src="https://github.com/user-attachments/assets/7b08a891-9177-46ea-aad2-35fc49feb6e7" />
+*Quiz Review page where you can see all your questions and what you got right and wrong*
 <img width="295" height="639" alt="IMG_3131" src="https://github.com/user-attachments/assets/0f9ea9b3-b638-49b0-9ae0-d110b5dc13e9" />
+*History screen where you can access previously made flashcard sets and quizzes*
 
 ## Technologies Used
 
 - React Native / Expo
 - Firebase
-- Gemini
-- ChatGPT
+- Google Cloud Document AI
+- Google Gemini Flash 2.0
 
 ## Usage
 
-Firstly, a user needs to sign up or login in into the app. They then will be taken to the homescreen where they will be able to select whether they want to make a flashcard set or quiz, upload their notes, change the settings pertaining to what they are creating and create the flashcard or quiz. From there, the user will be taken to the homepage for that flashcard or quiz. For the flashcards, the home page gives the user the ability to add new cards, edit cards, or start practicing a certain number of flashcards. The user can practice the flashcards as much as they would like at any time since the user can reaccess their flashcards in the history page. For the quiz, the home includes basic information about the quiz and a button for the user to start the quiz. The user can then complete the quiz. Afterwards, they will be able to see their results and can click another button to see all the questions again. The user can then retake the quiz as much as they would like to. 
+### Getting Started
+- Sign up or log in to the app. 
+- You'll be taken to the home screen.
+
+### Creating Flashcards
+- Select "Flashcards" on the home screen
+- Upload your notes (PDF or photos)
+- Adjust settings as needed
+- Generate your flashcards
+
+### Flashcard Features
+- Add, delete, or edit flashcards to your set
+- Flashcards can be mastered by getting cards right
+- You can reset your mastery progress
+- Can access past flashcard sets in history
+
+### Creating Quizzes
+- Select "Quiz" on the home screen
+- Upload your notes (PDF or photos)
+- Choose question types
+- Adjust settings as needed
+- Generate your quiz
+
+### Quiz Features
+- You can retake the same quiz as many times as you want
+- Quiz progress saves if you exit the app
+- Once you take a quiz, you can see what questions you got wrong and how you answered them
 
 ## Future Improvements
 
