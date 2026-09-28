@@ -19,13 +19,19 @@ This app is meant to smooth the process of creating flashcards and quizzes. Rath
 
 ## Screenshots
 <img width="295" height="639" alt="IMG_3130" src="https://github.com/user-attachments/assets/3e31b9af-22c1-4a0c-8b76-2f6c76cc7249" />
+
 *Home screen with flashcard and quiz creation options*
 
 <img width="295" height="639" alt="IMG_3132" src="https://github.com/user-attachments/assets/1ea2b22f-c26d-4efb-b5d7-89afc675b55b" />
+
 *Flashcard home screen where you can add, edit, and delete flashcards*
+
 <img width="295" height="639" alt="IMG_3134" src="https://github.com/user-attachments/assets/7b08a891-9177-46ea-aad2-35fc49feb6e7" />
+
 *Quiz Review page where you can see all your questions and what you got right and wrong*
+
 <img width="295" height="639" alt="IMG_3131" src="https://github.com/user-attachments/assets/0f9ea9b3-b638-49b0-9ae0-d110b5dc13e9" />
+
 *History screen where you can access previously made flashcard sets and quizzes*
 
 ## Technologies Used
